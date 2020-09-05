@@ -29,14 +29,13 @@ body {
 .container {
     width: auto;
     max-width: 1110px;
-    margin: 0 auto;
+    margin: 35px auto;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     font-weight: 700;
-    margin-top: 35px;
 }
 
 .header_title {
@@ -46,7 +45,8 @@ header {
 }
 
 .header-subtitle,
-.toggle-label {
+.toggle-label,
+.card-overview-text {
     font-size: 14px;
     font-weight: 700;
 }
@@ -105,9 +105,11 @@ header {
     background-color: hsl(0, 0%, 100%);
 }
 
-.cards-top {
+.cards,
+.cards-bottom-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 25px;
     grid-column-gap: 30px;
     margin-top: 45px;
 }
@@ -123,6 +125,11 @@ header {
     box-sizing: border-box;
 }
 
+.cards-column {
+    display: flex;
+    justify-content: space-between;
+}
+
 .card::before {
     content: "";
     width: 100%;
@@ -132,7 +139,6 @@ header {
     top: 0;
     left: 0;
     height: 4px;
-    background-color: hsl(195, 100%, 50%);
 }
 
 .sm-handle {
@@ -162,13 +168,38 @@ header {
     letter-spacing: 4px;
 }
 
-.followers-stat {
+.stat {
     font-size: 12px;
     font-weight: 700;
+    display: flex;
+    align-items: flex-end;
     color: hsl(163, 72%, 41%);
 }
 
-.followers-stat-negative {
+.card-overview-text {}
+
+.card-column {
+    text-align: left;
+    display: grid;
+    grid-row-gap: 25px;
+}
+
+.card-column:nth-child(2) {
+    text-align: right;
+}
+
+.card-overview-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: .9em;
+}
+
+.stat-negative {
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-end;
     color: hsl(348, 97%, 39%);
 }
 
@@ -185,8 +216,22 @@ header {
     background: linear-gradient(90deg, hsl(37, 97%, 70%)0%, hsl(329, 70%, 58%) 100%);
 }
 
+.card-blue::before {
+    background-color: hsl(195, 100%, 50%);
+}
+
 .card-red::before {
     background: hsl(348, 97%, 39%);
+}
+
+.cards-bottom {
+    margin-top: 50px;
+}
+
+.cards-bottom-title {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
 }
 
 
